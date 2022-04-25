@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<ioc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="55c60dd2-4631-4d8f-a924-18513a4487b1" last-modified="2022-04-25T19:46:01" xmlns="http://schemas.mandiant.com/2010/ioc">
+  <short_description>BlackCat</short_description>
+  <description>BlackCat/ALPHV Ransomware Indicators of Compromise
+Flash number : CU-000167-MW
+Date : 19 April 2022
+Author : Julien Garcia (https://www.linkedin.com/in/jgarcia-cybersec/)</description>
+  <authored_by>Julien Garcia</authored_by>
+  <authored_date>2022-04-25T18:29:01</authored_date>
+  <links />
+  <definition>
+    <Indicator operator="OR" id="1696c1ae-4c0d-4d3a-9cd0-cc7b64baf7ae">
+      <IndicatorItem id="1c86692f-cb38-4208-8fd9-edd8c6f893cd" condition="contains">
+        <Context document="FileItem" search="FileItem/FileName" type="mir" />
+        <Content type="string">amd - Copy.ps1</Content>
+      </IndicatorItem>
+      <IndicatorItem id="790b8bf3-f6ec-4df5-8333-825b65b749f9" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir" />
+        <Content type="md5">861738dd15eb7fb50568f0e39a69e107</Content>
+      </IndicatorItem>
+      <Indicator operator="OR" id="d1c5cf76-92b0-40d0-8090-8ed221f0c9c3">
+        <IndicatorItem id="c8a70429-9591-408e-9579-0816cb5834ba" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">ipscan.ps1</Content>
+        </IndicatorItem>
+        <IndicatorItem id="197505c1-711b-45e6-a758-73c5b7e426ae" condition="is">
+          <Context document="FileItem" search="FileItem/Md5sum" type="mir" />
+          <Content type="md5">9f60dd752e7692a2f5c758de4eab3e6f</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator operator="OR" id="3a36ba90-c9e2-4ef1-836c-ae3486d8691b">
+        <IndicatorItem id="c649e5de-78fc-423b-9129-eacd0091cd8f" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">Run1.ps1</Content>
+        </IndicatorItem>
+        <IndicatorItem id="b9d9d111-0fb3-4816-827e-4e97ab9392a6" condition="is">
+          <Context document="FileItem" search="FileItem/Md5sum" type="mir" />
+          <Content type="md5">09bc47d7bc5e40d40d9729cec5e39d73</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator operator="OR" id="898efec8-d108-4262-b96e-255f3044350a">
+        <IndicatorItem id="cae5ab89-4a00-41f8-b5bc-a607afe98d62" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">[###].ps1</Content>
+        </IndicatorItem>
+        <IndicatorItem id="6ce7a878-d38d-42b8-9a54-4610f2175a56" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">[#].ps1</Content>
+        </IndicatorItem>
+        <IndicatorItem id="504edf3b-7c83-4d42-82f1-136fbdcc1b44" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">Run1.ps1</Content>
+        </IndicatorItem>
+        <IndicatorItem id="dd6cf2c5-b70e-4121-875c-5ec7c9047192" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">mim.ps1</Content>
+        </IndicatorItem>
+        <IndicatorItem id="b940e932-c2d6-4600-a7c4-2f86ff852821" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">[##].ps1</Content>
+        </IndicatorItem>
+        <IndicatorItem id="e5ae9cd7-4105-49f8-a4f4-b54513a49280" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">psexec.ps1</Content>
+        </IndicatorItem>
+        <IndicatorItem id="5cca45c1-a869-49cf-ab08-c110b897dd98" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">Systems.ps1</Content>
+        </IndicatorItem>
+        <IndicatorItem id="5e56aa3a-19ee-4a31-bf2d-d377b20699e9" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">System.ps1</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator operator="OR" id="8aa5d14b-304e-421f-8d1d-e5e135db5435">
+        <IndicatorItem id="7bffbbe8-baf8-4b2a-b6e3-b15403fead23" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">CheckVuln.bat</Content>
+        </IndicatorItem>
+        <IndicatorItem id="48f44a20-ac71-4ad5-a31c-51577df57d0c" condition="is">
+          <Context document="FileItem" search="FileItem/Md5sum" type="mir" />
+          <Content type="md5">f5ef5142f044b94ac5010fd883c09aa7</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator operator="OR" id="b5fcfdef-1cf2-4cdd-8b93-761062d5085c">
+        <IndicatorItem id="33a7d46c-4a40-4729-9bbb-dc46f4e95000" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">Create-share-RunAsAdmin.bat</Content>
+        </IndicatorItem>
+        <IndicatorItem id="ef417008-209a-4af1-bdb9-09dc737261aa" condition="is">
+          <Context document="FileItem" search="FileItem/Md5sum" type="mir" />
+          <Content type="md5">84e3b5fe3863d25bb72e25b10760e861</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator operator="OR" id="0ab4025c-ec1b-4edb-9cfa-a6884880d862">
+        <IndicatorItem id="34d8df97-f2c3-4d3a-9a53-455d8635c887" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">LPE-Exploit-RunAsUser.bat</Content>
+        </IndicatorItem>
+        <IndicatorItem id="ea905ea5-fe4b-4390-9338-fc97325eac62" condition="is">
+          <Context document="FileItem" search="FileItem/Md5sum" type="mir" />
+          <Content type="md5">9f2309285e8a8471fce7330fcade8619</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator operator="OR" id="2d1b8d9a-e50b-4d5a-9e4f-0b4715b2e779">
+        <IndicatorItem id="6327d497-872e-4a4c-8d8b-db55bcfef5e5" condition="is">
+          <Context document="FileItem" search="FileItem/Md5sum" type="mir" />
+          <Content type="md5">6c6c46bdac6713c94debbd454d34efd9</Content>
+        </IndicatorItem>
+        <IndicatorItem id="08080222-7c64-45b1-8ec5-07db57c8b1fc" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">RCE-Exploit-RunAsUser.bat</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator operator="OR" id="747f5249-e490-4014-b1d0-9c33d08794c0">
+        <IndicatorItem id="b81400b5-ff24-40ed-bf1a-6d625c8efcbb" condition="is">
+          <Context document="FileItem" search="FileItem/Md5sum" type="mir" />
+          <Content type="md5">e7ee8ea6fb7530d1d904cdb2d9745899</Content>
+        </IndicatorItem>
+        <IndicatorItem id="000632e0-ffb3-40bd-a3c2-37d7eaf43093" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">est.bat </Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator operator="OR" id="9202c3cd-43fa-43c5-8614-ebbfcea56c3e">
+        <IndicatorItem id="a1c3103c-4d5e-40bb-8a75-c34fac0da50a" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">runav.bat</Content>
+        </IndicatorItem>
+        <IndicatorItem id="8e272525-9955-42e8-9484-7ef2af38d893" condition="is">
+          <Context document="FileItem" search="FileItem/Md5sum" type="mir" />
+          <Content type="md5">815bb1b0c5f0f35f064c55a1b640fca5</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator operator="OR" id="55aca98f-df2a-48e7-a3fe-17c138e38f69">
+        <IndicatorItem id="59a7d5e4-6f8a-4dfc-9c47-085038e16aec" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">http_x64.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="c2004c78-a66c-447e-86a0-615c1490fe10" condition="is">
+          <Context document="FileItem" search="FileItem/Md5sum" type="mir" />
+          <Content type="md5">6c2874169fdfb30846fe7ffe34635bdb</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator operator="OR" id="b11eaa7d-0c11-4c72-99c8-d757eaf40fd1">
+        <IndicatorItem id="1ee70ed5-bd59-401c-8ea9-0dd6ee1e9e43" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">spider.dll</Content>
+        </IndicatorItem>
+        <IndicatorItem id="f8125c45-60b0-4cf5-974b-71bc60eae75f" condition="is">
+          <Context document="FileItem" search="FileItem/Md5sum" type="mir" />
+          <Content type="md5">20855475d20d252dda21287264a6d860</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator operator="OR" id="8c746dd8-37d0-49c3-803c-42a5d6319631">
+        <IndicatorItem id="9b28fbef-4c98-43b3-ada1-760bb119d421" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">spider_32.dll</Content>
+        </IndicatorItem>
+        <IndicatorItem id="de2ed435-ebfa-445a-9507-926a169ea64f" condition="is">
+          <Context document="FileItem" search="FileItem/Md5sum" type="mir" />
+          <Content type="md5">82db4c04f5dcda3bfcd75357adf98228</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator operator="OR" id="a2f8b973-fbaf-4b1d-9050-7dc54cf68240">
+        <IndicatorItem id="9a8a72d9-ed63-42e3-b5f7-8c16c8f1e77b" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">powershell.dll</Content>
+        </IndicatorItem>
+        <IndicatorItem id="90ed7e38-34e4-49f8-ab7f-9bb4c34864a7" condition="is">
+          <Context document="FileItem" search="FileItem/Md5sum" type="mir" />
+          <Content type="md5">fcf3a6eeb9f836315954dae03459716d</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator operator="OR" id="a189c700-20d9-4b22-aec2-308f921c87c5">
+        <IndicatorItem id="e8949659-00f4-4d05-94ae-27193438e61b" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">rpcdump.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="8871eb89-e29d-4d00-8610-a96df04bc4ad" condition="is">
+          <Context document="FileItem" search="FileItem/Md5sum" type="mir" />
+          <Content type="md5">91625f7f5d590534949ebe08cc728380</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator operator="OR" id="b44a57c8-058b-40ef-b1b4-e4147e57cf7f">
+        <IndicatorItem id="cd150ca8-c618-4f65-8266-a90feaba0df0" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">mimikatz.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="7250d540-f2a8-4ba1-8084-c47558d025ac" condition="is">
+          <Context document="FileItem" search="FileItem/Md5sum" type="mir" />
+          <Content type="md5">d241df7b9d2ec0b8194751cd5ce153e27cc40fa4</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator operator="OR" id="5a05165c-b24c-4767-b6bc-e6e346ad1290">
+        <IndicatorItem id="00e3916a-46f1-4d28-9078-adf776549172" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">run.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="8bea442f-b30e-49e0-af0c-094b1a6ebe86" condition="is">
+          <Context document="FileItem" search="FileItem/Md5sum" type="mir" />
+          <Content type="md5">4831c1b113df21360ef68c450b5fca278d08fae2</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator operator="OR" id="d68e3f67-9c7e-4281-b2ab-a645a5c85352">
+        <IndicatorItem id="bf2951c2-16bb-4e8c-9084-e34bfdbe809d" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">zakrep_plink.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="a9f72d69-c78b-4952-85c2-d5849490ae66" condition="is">
+          <Context document="FileItem" search="FileItem/Md5sum" type="mir" />
+          <Content type="md5">fce13da5592e9e120777d82d27e06ed2b44918cf</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator operator="OR" id="6529ec72-4e30-4923-9b29-47a2ddc70dae">
+        <IndicatorItem id="c1bd791e-25dd-46d8-b02d-e0f12c7ec356" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">beacon.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="c377df35-fac8-4a6f-b3de-97f6597cbbdc" condition="is">
+          <Context document="FileItem" search="FileItem/Md5sum" type="mir" />
+          <Content type="md5">3f85f03d33b9fe25bcfac611182da4ab7f06a442</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator operator="OR" id="8b8241f2-93b8-4531-9500-c65a0126e294">
+        <IndicatorItem id="49d45040-0f26-4af1-ad6a-031d9f48c711" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">win1999.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="a9dc3c12-27b8-457e-a8da-c83866995f14" condition="is">
+          <Context document="FileItem" search="FileItem/Md5sum" type="mir" />
+          <Content type="md5">37178dfaccbc371a04133d26a55127cf4d4382f8</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator operator="OR" id="21dccf15-fbf7-4275-96c7-d67edafec251">
+        <IndicatorItem id="7723bd4f-b57b-4c57-a143-08f9ba0ed654" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">test.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="5104b756-f0d9-412a-9f79-cfeb04c30a4e" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">Mim.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="1e2425b8-c0f7-4b89-b56f-500207177065" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">crackmapexec.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="462a7a9d-f664-4027-acf3-ab6db2c3d712" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">plink.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="2911a0c6-bd83-41a6-8893-4f30d6b646a0" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">PsExec64.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="824a5f90-5939-44ca-8a3d-591046b6756c" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">xxx.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="5b6e9334-b64c-45c3-8756-9dd7b10d7794" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">xxxw.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="2f368fb2-fe0d-4a12-8a73-4d1c38a83aa8" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">Services.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="8f3a4f5c-3773-41c6-9c4e-5a7915f1bda0" condition="contains">
+          <Context document="FileItem" search="FileItem/FileName" type="mir" />
+          <Content type="string">Systems.exe</Content>
+        </IndicatorItem>
+      </Indicator>
+    </Indicator>
+  </definition>
+</ioc>
