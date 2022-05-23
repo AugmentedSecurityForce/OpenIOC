@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<ioc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="785663c7-5049-4588-9b43-8fd1a3466fbe" last-modified="2022-05-23T18:21:54" xmlns="http://schemas.mandiant.com/2010/ioc">
+  <short_description>Threat Thursday: Purple Fox Rootkit</short_description>
+  <description>Threat Thursday: Purple Fox Rootkit
+URL : https://blogs.blackberry.com/en/2022/01/threat-thursday-purple-fox-rootkit
+Date : 23 may 2022
+Author : Julien Garcia (https://www.linkedin.com/in/jgarcia-cybersec)</description>
+  <authored_by>Julien Garcia</authored_by>
+  <authored_date>2022-05-23T18:11:15</authored_date>
+  <links />
+  <definition>
+    <Indicator operator="OR" id="b724563b-bd4b-4535-9186-ffa277606b91">
+      <IndicatorItem id="4bd2131c-b8ba-4146-a1cd-fd3b3536671b" condition="contains">
+        <Context document="FileItem" search="FileItem/FileName" type="mir" />
+        <Content type="string">svchost.txt</Content>
+      </IndicatorItem>
+      <IndicatorItem id="202c9e23-2a3a-43eb-8d1e-f9fe6194971d" condition="contains">
+        <Context document="FileItem" search="FileItem/FileName" type="mir" />
+        <Content type="string">Telegram Desktop.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="af06401b-9b64-4208-82dd-7a1f70d3103b" condition="contains">
+        <Context document="FileItem" search="FileItem/FileName" type="mir" />
+        <Content type="string">TextInputh.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="a5fc335a-b21a-4395-a41d-e9050bc8ea95" condition="contains">
+        <Context document="FileItem" search="FileItem/FileName" type="mir" />
+        <Content type="string">1.rar</Content>
+      </IndicatorItem>
+      <IndicatorItem id="8ea8bfd6-fd50-45e0-9a6c-c8971658c211" condition="contains">
+        <Context document="FileItem" search="FileItem/FileName" type="mir" />
+        <Content type="string">360.tct</Content>
+      </IndicatorItem>
+      <IndicatorItem id="aa263611-083c-4bc0-85bf-7dda66a17fff" condition="contains">
+        <Context document="FileItem" search="FileItem/FileName" type="mir" />
+        <Content type="string">Kill360.bat</Content>
+      </IndicatorItem>
+      <IndicatorItem id="dca49c9e-c735-4160-a8f0-652388589406" condition="contains">
+        <Context document="FileItem" search="FileItem/FileName" type="mir" />
+        <Content type="string">speedmem2.hg</Content>
+      </IndicatorItem>
+      <IndicatorItem id="e97d1831-b95e-42bb-b71d-1950c97003f1" condition="contains">
+        <Context document="FileItem" search="FileItem/FileName" type="mir" />
+        <Content type="string">dll.dll</Content>
+      </IndicatorItem>
+      <IndicatorItem id="60fde4f2-7d32-4762-9c1f-3f1cb64c7c5e" condition="contains">
+        <Context document="FileItem" search="FileItem/FileName" type="mir" />
+        <Content type="string">Calldriver.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="98e1d0bd-232f-4375-9ca2-49f9b25aa3e0" condition="contains">
+        <Context document="RegistryItem" search="RegistryItem/Path" type="mir" />
+        <Content type="string">HKEY_LOCAL_MACHINE\SYSTEM\Select\MarkTime</Content>
+      </IndicatorItem>
+    </Indicator>
+  </definition>
+</ioc>
